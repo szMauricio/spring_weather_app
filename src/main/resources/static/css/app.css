@@ -1,0 +1,82 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent: #ffd166;
+  --muted: rgba(255, 255, 255, 0.7);
+  --blur: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  font-family: "Inter", Arial, sans-serif;
+  color: #fff;
+}
+
+/* background */
+.app-bg {
+  background: linear-gradient(180deg, rgba(4, 9, 30, 0.65), rgba(2, 6, 22, 0.8)),
+    url("/images/image.png") center/cover no-repeat fixed;
+}
+
+/* glass card */
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  color: #fff;
+  margin-top: 12vh;
+}
+
+/* input focus */
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(255, 209, 102, 0.12);
+  border-color: rgba(255, 209, 102, 0.6);
+}
+
+/* buttons */
+.btn-primary {
+  background: linear-gradient(90deg, #2dd4bf, #06b6d4);
+  border: none;
+  box-shadow: 0 6px 18px rgba(3, 218, 197, 0.12);
+}
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* weather icon big */
+.weather-icon-big .wi {
+  font-size: 96px;
+  color: var(--accent);
+  display: inline-block;
+}
+
+/* smaller responsive tweaks */
+@media (max-width: 576px) {
+  .glass {
+    margin-top: 6vh;
+    padding: 1.5rem;
+  }
+  .weather-icon-big .wi {
+    font-size: 72px;
+  }
+}
+
+/* subtle hover for list items */
+.list-unstyled li:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+  transition: 0.18s;
+}
